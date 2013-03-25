@@ -14,7 +14,6 @@ https://www.codeeval.com/open_challenges/33/
 
 import sys
 from math import sqrt
-from math import floor
 
 # ----------
 # Functions
@@ -49,14 +48,18 @@ def find_num_double_squares(val, squares):
     max_square_index = squares.index(max_square)
     possible_vals = squares[:max_square_index + 1]
     counter = 0
-    for i in possible_vals:
-        if (val - i) in possible_vals:
+    i = 0
+    j = len(possible_vals) - 1
+    while i <= j:
+        temp_val = possible_vals[i] + possible_vals[j]
+        if temp_val < val:
+           i += 1
+        elif temp_val > val:
+           j -=1
+        else:
+            i += 1
+            j -= 1
             counter += 1
-            if (i == val-i):
-              possible_vals.remove(i)
-            else:
-              possible_vals.remove(i)
-              possible_vals.remove(val-i)
     return counter
     
 # ------
