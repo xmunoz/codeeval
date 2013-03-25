@@ -69,7 +69,6 @@ def find_num_double_squares(val, squares):
 def main():
     test_file = open(sys.argv[1], 'r')
     data = parse_file(test_file)
-    print 'data', data
     test_file.close()
     possible_squares = compute_all_squares()
     for d in data:
