@@ -34,7 +34,7 @@ def compute_all_squares():
     '''
     max_int = 2147483647
     squares = []
-    for i in range(int(sqrt(max_int))):
+    for i in range(int(sqrt(max_int)) + 1):
         squares.append(i**2)
 
     return squares
